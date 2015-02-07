@@ -1,3 +1,13 @@
+.offer {
+  @include parallax(400px, "../img/offer.jpg") {
+
+    h2 {
+      line-height: 400px;
+      font-size: em(35px);
+    }
+  }
+}
+
 .cards {
   @include outer-container();
   @include display(flex);
