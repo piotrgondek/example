@@ -1,5 +1,5 @@
 .welcome {
-  @include calc(height, '100vh - #{$navigation-height}');
+  @include calc(min-height, '100vh - #{$navigation-height}');
 
   @include parallax(60vh, "../img/welcome.jpg") {
     font-size: em(45px);
