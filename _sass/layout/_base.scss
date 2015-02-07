@@ -1,6 +1,8 @@
 $navigation-height: 60px;
 $default-margin: 20px;
 
+$mobile: new-breakpoint(max-width 480px 4);
+
 body {
   margin: 0;
   padding: $navigation-height 0 0;

@@ -8,6 +8,10 @@ header.navigation {
   a {
     text-decoration: none;
   }
+
+  @include media($mobile) {
+    text-align: center;
+  }
   //////////////////////////////////////////////////////////////////////////////////
 
   $navigation-padding: 1em;
