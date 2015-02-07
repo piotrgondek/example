@@ -6,6 +6,6 @@ body {
   padding: $navigation-height 0;
 }
 
-article {
+section {
   @include outer-container;
 }
