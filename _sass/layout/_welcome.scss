@@ -3,10 +3,6 @@
 
   @include parallax(60vh, "../img/welcome.jpg") {
     font-size: em(45px);
-
-    h1 {
-      line-height: 60vh;
-    }
   }
 
   article {
