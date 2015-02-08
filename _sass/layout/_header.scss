@@ -4,7 +4,6 @@
   $navigation-color-hover: white;
   $navigation-active-link-color: transparentize(white, 0.5);
 
-  @include outer-container;
   background-color: $navigation-background;
   border-bottom: 1px solid darken($navigation-background, 10);
   height: $navigation-height;
@@ -12,6 +11,7 @@
   z-index: 999;
   position: fixed;
   top: 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
 
   @include media($mobile) {
     text-align: center;
@@ -24,33 +24,35 @@
   // Nav menu
 
   nav {
+    @include outer-container;
     height: $navigation-height;
-    z-index: 9999999;
-  }
 
-  // The nav items
+    // The nav items
 
-  ul li.nav-link {
-    background: $navigation-background;
-    padding-right: 0.8em;
-    display: inline;
-    line-height: $navigation-height;
+    ul {
+      .nav-link {
+        background: $navigation-background;
+        padding-right: 0.8em;
+        display: inline;
+        line-height: $navigation-height;
 
-    a {
-      color: $navigation-color;
-      display: inline-block;
-      font-weight: 400;
-      padding-right: 1em;
+        &.active-nav-item a {
+          border-bottom: 1px solid $navigation-active-link-color;
+          padding-bottom: 3px;
+        }
 
-      &:focus,
-      &:hover {
-        color: $navigation-color-hover;
+        a {
+          color: $navigation-color;
+          display: inline-block;
+          font-weight: 400;
+          padding-right: 1em;
+
+          &:focus,
+          &:hover {
+            color: $navigation-color-hover;
+          }
+        }
       }
     }
-  }
-
-  .active-nav-item a {
-    border-bottom: 1px solid $navigation-active-link-color;
-    padding-bottom: 3px;
   }
 }
