@@ -1,7 +1,9 @@
 $navigation-height: 60px;
 $default-margin: 20px;
 
-$mobile: new-breakpoint(max-width 480px 4);
+$mobile: new-breakpoint(max-width 480px 3);
+$tablet: new-breakpoint(max-width 966px 6);
+$desktop: new-breakpoint(min-width 1024px 12);
 
 body {
   margin: 0;

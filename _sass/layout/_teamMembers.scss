@@ -1,4 +1,61 @@
 .team {
   @include calc(min-height, '100vh - #{$navigation-height}');
   @include parallax(400px, "../img/teamMembers.jpg");
+
+  .team-members {
+    @include outer-container();
+
+    .member {
+      margin-bottom: $default-margin;
+
+      @include media($tablet) {
+        @include span-columns(3);
+        @include omega(2n);
+
+        div {
+          @include span-columns(2 of 3);
+        }
+
+        img {
+          @include span-columns(1 of 3);
+        }
+      }
+
+      @include media($mobile) {
+        @include span-columns(3);
+
+        div {
+          @include span-columns(2 of 3);
+        }
+
+        img {
+          @include span-columns(1 of 3);
+        }
+      }
+
+      @include media($desktop) {
+        opacity: 0.4;
+        @include transition(opacity 0.2s ease-in-out);
+        @include span-columns(4);
+        @include omega(3n);
+
+        &:hover {
+          opacity: 1;
+        }
+
+        div {
+          @include span-columns(3 of 4);
+        }
+
+        img {
+          @include span-columns(1 of 4);
+        }
+      }
+
+      img {
+        @include transform(translateY(10px));
+        border-radius: 50%;
+      }
+    }
+  }
 }
