@@ -56,6 +56,14 @@
         @include transform(translateY(10px));
         border-radius: 50%;
       }
+
+      h3 {
+        font-size: em(14px);
+      }
+
+      li {
+        font-size: em(13px);
+      }
     }
   }
 }
