@@ -17,20 +17,29 @@
       @include outer-container();
       margin-bottom: $default-margin;
 
-      &:hover {
+      @include media($desktop) {
 
-        .offer-image {
+        &:hover {
 
-          &.warta, &.nordea, &.ksiegowosc {
-            background-position-x: right;
+          .offer-image {
+            &.warta, &.nordea, &.ksiegowosc {
+              background-position-x: right;
+            }
           }
         }
       }
 
       .offer-image {
         min-height: 150px;
-        @include span-columns(3);
-        @include transition(all 0.5s $ease-out-back);
+
+        @include media($desktop) {
+          @include span-columns(3);
+          @include transition(all 0.5s $ease-out-back);
+        }
+
+        @include media($tablet){
+          @include span-columns(2);
+        }
 
         &.warta {
           @include offerBackground("../img/oferta/warta.jpg");
@@ -46,7 +55,14 @@
       }
 
       .offer-content {
-        @include span-columns(9);
+
+        @include media($desktop) {
+          @include span-columns(9);
+        }
+
+        @include media($tablet){
+          @include span-columns(4);
+        }
       }
     }
   }
